@@ -1,0 +1,116 @@
+.history-item {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.history-item-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.search-date {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .date-icon {
+    font-size: 1rem;
+  }
+}
+
+.history-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fact-section, .query-section, .gif-section {
+  h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.fact-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #343a40;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #007bff;
+}
+
+.fact-text-gif {
+  word-wrap: break-word;    
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.query-words {
+  background: linear-gradient(135deg, #e7f3ff 0%, #cce7ff 100%);
+  color: #0056b3;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+}
+
+.history-gif {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.gif-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #6c757d;
+  min-height: 100px;
+
+  .error-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}

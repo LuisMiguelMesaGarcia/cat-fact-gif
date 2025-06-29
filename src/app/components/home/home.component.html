@@ -1,0 +1,44 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1 class="app-title">{{ title }}</h1>
+    <button 
+      class="new-fact-btn"
+      (click)="loadNewFact()"
+      title="Cargar nuevo hecho sobre gatos">
+      <i class="icon">🐱</i>
+      Nuevo Hecho
+    </button>
+  </header>
+
+  <nav class="tab-navigation">
+    <button 
+      class="tab-btn"
+      [class.active]="isActiveTab(TABS.CURRENT)"
+      (click)="setActiveTab(TABS.CURRENT)">
+      <i class="tab-icon">🎯</i>
+      Resultado Actual
+    </button>
+    
+    <button 
+      class="tab-btn"
+      [class.active]="isActiveTab(TABS.HISTORY)"
+      (click)="setActiveTab(TABS.HISTORY)">
+      <i class="tab-icon">📚</i>
+      Historial
+    </button>
+  </nav>
+
+  <main class="app-content">
+    <div class="tab-content" [class.active]="isActiveTab(TABS.CURRENT)">
+      <app-current-fact></app-current-fact>
+    </div>
+    
+    <div class="tab-content" [class.active]="isActiveTab(TABS.HISTORY)">
+      <app-search-history></app-search-history>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Luis Miguel Mesa Garcia 2025 Cat Facts & GIFs</p>
+  </footer>
+</div>

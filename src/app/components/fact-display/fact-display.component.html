@@ -1,0 +1,16 @@
+<div class="fact-container">
+  <div class="fact-content">
+    <h2 class="fact-title">Cat Fact</h2>
+    <p class="fact-text">{{ fact }}</p>
+  </div>
+  
+  <div class="fact-actions">
+    <button 
+      class="refresh-btn"
+      (click)="onRefreshGif()"
+      title="Obtener nuevo GIF para este hecho">
+      <i class="refresh-icon">🔄</i>
+      Refrescar GIF
+    </button>
+  </div>
+</div>

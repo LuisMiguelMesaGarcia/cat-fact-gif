@@ -1,0 +1,19 @@
+<div class="gif-container">
+  <div class="gif-loading" *ngIf="isLoading">
+    <div class="spinner"></div>
+  </div>
+  
+  <img 
+    *ngIf="gifUrl && !isLoading && !imageError"
+    [src]="gifUrl" 
+    alt="Cat GIF"
+    (error)="onImageError()"
+    (load)="onImageLoad()"
+    class="gif-image">
+  <div 
+    *ngIf="(!gifUrl || imageError) && !isLoading" 
+    class="no-gif">
+    <i class="placeholder-icon">🐱</i>
+    <p>No GIF disponible</p>
+  </div>
+</div>

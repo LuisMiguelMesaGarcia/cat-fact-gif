@@ -1,0 +1,40 @@
+<div class="history-item">
+  <div class="history-item-header">
+    <div class="search-date">
+      <i class="date-icon">📅</i>
+      {{ historyItem.searchDate | date:'medium' }}
+    </div>
+  </div>
+
+  <div class="history-item-content">
+    <div class="fact-section">
+      <h4 class="fact-label">Cat Fact:</h4>
+      <p class="fact-text">{{ historyItem.catFact }}</p>
+    </div>
+
+    <div class="query-section">
+      <h4 class="query-label">Palabras de búsqueda:</h4>
+      <span class="query-words">{{ historyItem.queryWords }}</span>
+    </div>
+
+    <div class="gif-section">
+      <h4 class="gif-label">GIF asociado:</h4>
+      <p class="fact-text-gif">{{ historyItem.gifUrl }}</p>
+      <div class="gif-container">
+        <img 
+          *ngIf="historyItem.gifUrl && !imageError"
+          [src]="historyItem.gifUrl" 
+          alt="GIF histórico"
+          (error)="onImageError()"
+          (load)="onImageLoad()"
+          (click)="openGifInNewTab()"
+          class="history-gif">
+        
+        <div *ngIf="!historyItem.gifUrl || imageError" class="gif-error">
+          <i class="error-icon">❌</i>
+          <span>GIF no disponible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

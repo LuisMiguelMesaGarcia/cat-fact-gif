@@ -1,0 +1,27 @@
+<div class="current-fact-container">
+  <div class="content" *ngIf="currentFact && !isLoading">
+    <app-gif-display 
+      [gifUrl]="currentUrl"
+      [isLoading]="isLoading">
+    </app-gif-display>
+    
+    <app-fact-display 
+      [fact]="currentFact"
+      (refreshGif)="refreshGif()">
+    </app-fact-display>
+  </div>
+
+  <div class="loading-container" *ngIf="!currentFact || isLoading">
+    <div class="loading-spinner" *ngIf="isLoading">
+      <div class="spinner"></div>
+      <p>Cargando...</p>
+    </div>
+    
+    <!-- si no hay nada -->
+    <div class="initial-load" *ngIf="!currentFact && !isLoading">
+      <button class="load-btn" (click)="loadNewFact()">
+        Cargar Nuevo Hecho
+      </button>
+    </div>
+  </div>
+</div>

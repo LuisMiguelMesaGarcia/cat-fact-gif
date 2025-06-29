@@ -1,0 +1,29 @@
+<div class="history-container">
+  <div class="history-header">
+    <h2>Historial de Búsquedas</h2>
+    <button class="refresh-history-btn" (click)="loadHistory()">
+      <i class="refresh-icon">🔄</i>
+      Actualizar
+    </button>
+  </div>
+
+  <div class="loading-spinner" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Cargando historial...</p>
+  </div>
+
+  <div class="history-grid" *ngIf="searchHistory.length > 0 && !isLoading">
+    <app-history-item 
+      *ngFor="let item of searchHistory; trackBy: trackByHistoryId"
+      [historyItem]="item">
+    </app-history-item>
+  </div>
+
+  <div class="no-history" *ngIf="searchHistory.length === 0 && !isLoading">
+    <div class="no-history-content">
+      <i class="empty-icon">📭</i>
+      <h3>No hay historial disponible</h3>
+      <p>Realiza algunas búsquedas para ver el historial aquí</p>
+    </div>
+  </div>
+</div>
